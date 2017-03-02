@@ -5,7 +5,8 @@ RUN mkdir -p /opt/OTPQA
 
 WORKDIR /opt/OTPQA
 
-ENV TARGET_HOST dev-api.digitransit.fi
+#ENV TARGET_HOST dev-api.digitransit.fi
+ENV TARGET_HOST localhost:8080
 
 ADD . /opt/OTPQA
 
@@ -14,9 +15,9 @@ RUN apt-get update && \
 
 RUN pip install grequests
 
-RUN cd data && \
-  npm install node-fetch && \
-  node parse_places.js | tee ../endpoints_custom_hsl
+#RUN cd data && \
+#  npm install node-fetch && \
+#  node parse_places.js | tee ../endpoints_custom_hsl
 
 RUN python gen_requests.py 
 

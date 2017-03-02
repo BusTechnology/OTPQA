@@ -10,10 +10,10 @@ from copy import copy
 # python-requests wraps urllib2 providing a much nicer API.
 import grequests
 
-DATE = '2016-09-20'
+DATE = '2017-03-02'
 # split out base and specific endpoint
 SHOW_PARAMS = False
-SHOW_URL = False
+SHOW_URL = True
 SHOW_RESPONSE = False
 
 # globals to store accumulated responses. one file for summaries, one file for full itineraries.
@@ -325,7 +325,7 @@ def run(connect_args) :
             params['numItineraries'] = 3
 
         qstring = urllib.urlencode(params)
-        url = "http://%s/routing/v1/routers/hsl/%s?%s"%(host, api_method, qstring)
+        url = "http://%s/otp/routers/default/%s?%s"%(host, api_method, qstring)
 
         # Tomcat server + spaces in URLs -> HTTP 505 confusion
         if SHOW_PARAMS :

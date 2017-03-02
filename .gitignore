@@ -3,6 +3,8 @@
 *.json
 endpoints_custom.csv
 endpoints_random.csv
+*.swp
+
 
 # Packages
 *.egg
