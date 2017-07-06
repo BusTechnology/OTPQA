@@ -40,9 +40,9 @@ th, td {
 
 	for id_tuple in id_tuples:
 		yield """<tr><td rowspan="2"><a href="%s">%s</a></td>"""%(datasets[0][id_tuple]['url'], id_tuple)
+
 		for i, dataset in enumerate( datasets ):
 			response = dataset[id_tuple]
-
 			dataset_total_times[i].append( parsetime( response['total_time'] ) )
 			dataset_avg_times[i].append( parsetime( response['avg_time'] ) )
 
